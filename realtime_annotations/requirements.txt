@@ -1,2 +1,0 @@
-Django==4.x
-channels==4.x
