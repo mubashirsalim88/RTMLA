@@ -12,4 +12,5 @@ def upload_video(request):
         print(f"Video uploaded: {video.name}")
         print(f"Selected languages: {languages}")
         return HttpResponse("Video uploaded and languages selected!")
-    return HttpResponse("Upload failed!")
+    else:
+        return HttpResponse("Invalid request method.")
