@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-Time Video Annotations</title>
     <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Real-Time Video Annotations</h1>
-    <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
-           data-setup="{}">
-        <source src="/video/1.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-    </video>
+    <header>
+        <h1>Welcome to Real-Time Video Annotations</h1>
+        <p>Enhance your videos with interactive annotations in real-time!</p>
+    </header>
+
+    <main>
+        <div id="video-container">
+            <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+                   data-setup="{}" style="z-index: 1;">
+                <source src="/video/1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <canvas id="annotation-canvas"></canvas>
+        </div>
+
+        <aside class="annotation-controls">
+            <ul>
+                <li><button id="draw-rect" class="control-button">Draw Rectangle</button></li>
+                <li><button id="add-text" class="control-button">Add Text</button></li>
+                <li><button id="clear-canvas" class="control-button">Clear Annotations</button></li>
+            </ul>
+        </aside>
+    </main>
 
     <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
     <script src="/js/video.js"></script>
+    <script src="/js/annotations.js"></script>
 </body>
 </html>

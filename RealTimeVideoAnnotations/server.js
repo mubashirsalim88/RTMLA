@@ -17,14 +17,21 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Handle socket connections
+// Handling socket connections
 io.on('connection', (socket) => {
     console.log('New user connected');
 
+    // Listen for annotation events
+    socket.on('draw', (data) => {
+        io.emit('draw', data); // Broadcast to all clients
+    });
+
+    // Handle disconnection
     socket.on('disconnect', () => {
         console.log('User disconnected');
     });
 });
+
 
 // Start the server
 server.listen(PORT, () => {

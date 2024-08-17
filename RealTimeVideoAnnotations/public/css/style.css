@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+#video-container {
+    position: relative;
+    width: 640px;
+    height: 264px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 40px;
+}
+
+#annotation-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 264px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.annotation-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.annotation-controls ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.annotation-controls li {
+    margin-bottom: 10px;
+}
+
+.control-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.control-button:hover {
+    background-color: #0056b3;
+}
+
+.control-button:active, .control-button.btn-active {
+    background-color: #003f7f;
+}
+
+.control-button:focus {
+    outline: none;
+}
